@@ -14,19 +14,25 @@
 
 using namespace std;
 
+typedef enum : int {
+    raw,
+    intermediate,
+    finalGood,
+} goodType;
+
 class Good {
     string name;
     vector<string> components;
     int cost;
-    bool raw;
+    goodType type;
 public:
     inline Good () {}
-    inline Good (string newName, vector<string> parts) : name(newName), components(parts) {raw = false;}
-    inline Good (string newName, int price) : name(newName), cost(price) {raw = true;}
+    inline Good (string newName, vector<string> parts, goodType _type) : name(newName), components(parts), type(_type) {}
+    inline Good (string newName, int price, goodType _type) : name(newName), cost(price), type(_type) {}
     inline string getName () {return name;}
     inline vector<string> getComponents () {return components;}
     inline int getCost () {return cost;}
-    inline bool getRaw () {return raw;}
+    inline goodType getType () {return type;}
 };
 
 

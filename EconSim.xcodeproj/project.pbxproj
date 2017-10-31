@@ -10,6 +10,7 @@
 		933FAB461FA86E5200B1D38B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB451FA86E5200B1D38B /* main.cpp */; };
 		933FAB511FA8780600B1D38B /* sampleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB4F1FA8780600B1D38B /* sampleData.cpp */; };
 		933FAB561FA87E7900B1D38B /* marketmanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB541FA87E7900B1D38B /* marketmanager.cpp */; };
+		933FAB5F1FA898F200B1D38B /* consumermanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB5D1FA898F200B1D38B /* consumermanager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,9 @@
 		933FAB571FA8834F00B1D38B /* business.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = business.hpp; sourceTree = "<group>"; };
 		933FAB591FA8841400B1D38B /* sector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sector.hpp; sourceTree = "<group>"; };
 		933FAB5B1FA88B5700B1D38B /* sectormanager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sectormanager.hpp; sourceTree = "<group>"; };
+		933FAB5C1FA893E400B1D38B /* consumer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = consumer.hpp; sourceTree = "<group>"; };
+		933FAB5D1FA898F200B1D38B /* consumermanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = consumermanager.cpp; sourceTree = "<group>"; };
+		933FAB5E1FA898F200B1D38B /* consumermanager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = consumermanager.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				933FAB451FA86E5200B1D38B /* main.cpp */,
+				933FAB5C1FA893E400B1D38B /* consumer.hpp */,
 				933FAB571FA8834F00B1D38B /* business.hpp */,
 				933FAB591FA8841400B1D38B /* sector.hpp */,
 				933FAB4C1FA86FD100B1D38B /* good.h */,
@@ -78,6 +83,8 @@
 				933FAB551FA87E7900B1D38B /* marketmanager.hpp */,
 				933FAB531FA87A5600B1D38B /* sampleData.h */,
 				933FAB5B1FA88B5700B1D38B /* sectormanager.hpp */,
+				933FAB5D1FA898F200B1D38B /* consumermanager.cpp */,
+				933FAB5E1FA898F200B1D38B /* consumermanager.hpp */,
 			);
 			path = EconSim;
 			sourceTree = "<group>";
@@ -142,6 +149,7 @@
 				933FAB561FA87E7900B1D38B /* marketmanager.cpp in Sources */,
 				933FAB511FA8780600B1D38B /* sampleData.cpp in Sources */,
 				933FAB461FA86E5200B1D38B /* main.cpp in Sources */,
+				933FAB5F1FA898F200B1D38B /* consumermanager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@ class goodmarket {
 public:
     inline int getCost (Good good) {
         if (goodExists(good)) {
-            if (good.getRaw()) {
+            if (good.getType() == goodType(0)) {
                 return good.getCost();
             } else {
                 int cost = 0;

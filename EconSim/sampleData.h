@@ -7,24 +7,28 @@
 //
 
 #ifndef sampleData_h
+#define sampleData_h
 
 #include "goodmarket.h"
 #include "sectormanager.hpp"
-
-#define sampleData_h
+#include "consumermanager.hpp"
 
 class sampleData {
     goodmarket sampleGoods;
     sectormanager sampleSectors;
+    consumerManager sampleConsumers;
+    
 public:
     inline sampleData() {}
     inline sampleData(goodmarket market) : sampleGoods(market) {}
     
     bool generateGoods();
     void generateSectors();
+    void generateConsumers();
     inline goodmarket getMarket(){ return sampleGoods;}
     inline sectormanager getSectors (){ return sampleSectors;}
     inline void setMarket (goodmarket newMarket) { sampleGoods = newMarket;}
+    inline consumerManager getConsumers() { return sampleConsumers;}
 };
 
 #endif /* sampleData_h */

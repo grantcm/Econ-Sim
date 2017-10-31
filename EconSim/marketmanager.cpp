@@ -10,8 +10,8 @@
 
 #include "marketmanager.hpp"
 
-marketManager::marketManager (goodmarket market, sectormanager sector) : goods (market), sectors(sector) {}
-
+marketManager::marketManager (goodmarket market, sectormanager sector, consumerManager consumer) : goods (market), sectors(sector), consumers(consumer) {}
+marketManager::marketManager (sampleData data) : goods(data.getMarket()) , sectors(data.getSectors()), consumers(data.getConsumers()) {}
 
 void marketManager::printGoodPrices() {
     vector<pair<string, int>> goodPrices = goods.getAllGoodPrices();
@@ -28,4 +28,9 @@ void marketManager::printSectors() {
 void marketManager::printBusinesses() {
     cout << "Businesses:" << endl;
     sectors.printBusinesses();
+}
+
+void marketManager::printConsumers() {
+    cout << "Consumers: " << endl;
+    consumers.printConsumers();
 }

@@ -11,12 +11,14 @@
 #include "marketmanager.hpp"
 
 int main(int argc, const char * argv[]) {
-    sampleData market = sampleData();
-    market.generateGoods();
-    market.generateSectors();
-    marketManager manager = marketManager(market.getMarket(), market.getSectors());
+    sampleData data = sampleData();
+    data.generateGoods();
+    data.generateSectors();
+    data.generateConsumers();
+    marketManager manager = marketManager(data);
     manager.printGoodPrices();
     manager.printSectors();
     manager.printBusinesses();
+    manager.printConsumers();
     return 0;
 }
