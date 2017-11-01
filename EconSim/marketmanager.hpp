@@ -23,8 +23,8 @@ public:
     marketManager (goodmarket, sectormanager, consumerManager);
     marketManager (sampleData);
     inline marketManager () {}
-    inline bool addGood (Good toAdd) { return goods.addGood(toAdd); }
-    inline bool removeGood (Good toRemove) { return goods.removeGood(toRemove); }
+    inline void addGood (Good toAdd) { goods.addGood(toAdd); }
+    inline void removeGood (Good toRemove) { goods.removeGood(toRemove); }
     inline void addSector (sector toAdd) { sectors.addSector(toAdd);}
     inline void addBusinessToSector (business toAdd, string toAddTo) { sectors.addBusinessToSector(toAdd, toAddTo);}
     inline void addConsumer (consumer toAdd) { consumers.addConsumer(toAdd);}

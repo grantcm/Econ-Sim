@@ -38,21 +38,16 @@ public:
         return getCost(goodMap[good]);
     }
     
-    inline bool addGood (Good toAdd) {
+    inline void addGood (Good toAdd) {
         if (!goodExists(toAdd)) {
             goodMap[toAdd.getName()]=toAdd;
             goodNames.insert(toAdd.getName());
-            return true;
         }
-        return false;
     }
     
-    inline bool removeGood (Good toRemove) {
-        //TODO
-        if (goodExists(toRemove)) {
-            return true;
-        }
-        return false;
+    inline void removeGood (Good toRemove) {
+        goodMap.erase(toRemove.getName());
+        goodNames.erase(toRemove.getName());
     }
     
     inline vector<pair<string, int>> getAllGoodPrices () {

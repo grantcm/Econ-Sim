@@ -23,7 +23,7 @@ class business {
 public:
     inline business () {}
     inline business (string newName, Good * newGood, set<consumer *> _employees) : name(newName), product(newGood) {
-        for (consumer * c: employees) {
+        for (consumer * c: _employees) {
             if (!c->getEmployed()){
                 c->setEmployed(true);
                 c->setEmployer(name);

@@ -27,7 +27,14 @@ public:
     inline string getName() { return name;}
     inline void setEmployer (string newEmp) { employer = newEmp; }
     inline void setGoodPreference(string newPref) { goodPreference = newPref;}
-    inline void printConsumer() {cout<<name<<" "<<employer<<" "<<goodPreference<<endl; }
+    inline void printConsumer() {
+        if (employed) {
+            cout<<name<<" works for: "<<employer<<". Has good preference: "<<goodPreference<<endl;
+        } else {
+            cout<<name<<" Has good preference: "<<goodPreference<<endl;
+
+        }
+    }
 };
 
 #endif /* consumer_h */

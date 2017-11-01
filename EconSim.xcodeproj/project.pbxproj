@@ -72,7 +72,15 @@
 		933FAB441FA86E5200B1D38B /* EconSim */ = {
 			isa = PBXGroup;
 			children = (
+				934155BA1FA9C7CB00806922 /* Logic */,
 				933FAB451FA86E5200B1D38B /* main.cpp */,
+			);
+			path = EconSim;
+			sourceTree = "<group>";
+		};
+		934155BA1FA9C7CB00806922 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
 				933FAB5C1FA893E400B1D38B /* consumer.hpp */,
 				933FAB571FA8834F00B1D38B /* business.hpp */,
 				933FAB591FA8841400B1D38B /* sector.hpp */,
@@ -86,7 +94,7 @@
 				933FAB5D1FA898F200B1D38B /* consumermanager.cpp */,
 				933FAB5E1FA898F200B1D38B /* consumermanager.hpp */,
 			);
-			path = EconSim;
+			name = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -13,8 +13,8 @@
 int main(int argc, const char * argv[]) {
     sampleData data = sampleData();
     data.generateGoods();
-    data.generateSectors();
     data.generateConsumers();
+    data.generateSectors();
     marketManager manager = marketManager(data);
     manager.printGoodPrices();
     manager.printSectors();
