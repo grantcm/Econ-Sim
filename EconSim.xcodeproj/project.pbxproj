@@ -11,6 +11,9 @@
 		933FAB511FA8780600B1D38B /* sampleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB4F1FA8780600B1D38B /* sampleData.cpp */; };
 		933FAB561FA87E7900B1D38B /* marketmanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB541FA87E7900B1D38B /* marketmanager.cpp */; };
 		933FAB5F1FA898F200B1D38B /* consumermanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB5D1FA898F200B1D38B /* consumermanager.cpp */; };
+		934155BD1FA9DB0D00806922 /* mainwindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 934155BC1FA9DB0D00806922 /* mainwindow.cpp */; };
+		934155CB1FA9E9B000806922 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934155BF1FA9DE9400806922 /* OpenGL.framework */; };
+		937EB68A1FA9EC4800CB2A7F /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 937EB6841FA9EACC00CB2A7F /* libglfw.3.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +43,14 @@
 		933FAB5C1FA893E400B1D38B /* consumer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = consumer.hpp; sourceTree = "<group>"; };
 		933FAB5D1FA898F200B1D38B /* consumermanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = consumermanager.cpp; sourceTree = "<group>"; };
 		933FAB5E1FA898F200B1D38B /* consumermanager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = consumermanager.hpp; sourceTree = "<group>"; };
+		934155BC1FA9DB0D00806922 /* mainwindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mainwindow.cpp; sourceTree = "<group>"; };
+		934155BF1FA9DE9400806922 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		934155C11FA9E0C300806922 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = "../../Downloads/glfw-3.2.1/src/libglfw3.a"; sourceTree = "<group>"; };
+		934155C41FA9E14600806922 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		934155C61FA9E14F00806922 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		934155C81FA9E15A00806922 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		937EB6841FA9EACC00CB2A7F /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		937EB6881FA9EBB500CB2A7F /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				937EB68A1FA9EC4800CB2A7F /* libglfw.3.2.dylib in Frameworks */,
+				934155CB1FA9E9B000806922 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +71,7 @@
 			children = (
 				933FAB441FA86E5200B1D38B /* EconSim */,
 				933FAB431FA86E5200B1D38B /* Products */,
+				934155BE1FA9DE9400806922 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,13 +86,14 @@
 		933FAB441FA86E5200B1D38B /* EconSim */ = {
 			isa = PBXGroup;
 			children = (
-				934155BA1FA9C7CB00806922 /* Logic */,
+				934155BB1FA9C80300806922 /* GUI */,
+				934155BA1FA9C7CB00806922 /* Model */,
 				933FAB451FA86E5200B1D38B /* main.cpp */,
 			);
 			path = EconSim;
 			sourceTree = "<group>";
 		};
-		934155BA1FA9C7CB00806922 /* Logic */ = {
+		934155BA1FA9C7CB00806922 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				933FAB5C1FA893E400B1D38B /* consumer.hpp */,
@@ -94,7 +109,29 @@
 				933FAB5D1FA898F200B1D38B /* consumermanager.cpp */,
 				933FAB5E1FA898F200B1D38B /* consumermanager.hpp */,
 			);
-			name = Logic;
+			name = Model;
+			sourceTree = "<group>";
+		};
+		934155BB1FA9C80300806922 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				934155BC1FA9DB0D00806922 /* mainwindow.cpp */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		934155BE1FA9DE9400806922 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				937EB6881FA9EBB500CB2A7F /* libglfw.3.2.dylib */,
+				937EB6841FA9EACC00CB2A7F /* libglfw.3.2.dylib */,
+				934155C81FA9E15A00806922 /* IOKit.framework */,
+				934155C61FA9E14F00806922 /* CoreVideo.framework */,
+				934155C41FA9E14600806922 /* Cocoa.framework */,
+				934155C11FA9E0C300806922 /* libglfw3.a */,
+				934155BF1FA9DE9400806922 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +195,7 @@
 				933FAB511FA8780600B1D38B /* sampleData.cpp in Sources */,
 				933FAB461FA86E5200B1D38B /* main.cpp in Sources */,
 				933FAB5F1FA898F200B1D38B /* consumermanager.cpp in Sources */,
+				934155BD1FA9DB0D00806922 /* mainwindow.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +292,30 @@
 		933FAB4A1FA86E5200B1D38B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.12;
 			};
 			name = Debug;
 		};
 		933FAB4B1FA86E5200B1D38B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw/3.2.1/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.12;
 			};
 			name = Release;
 		};
