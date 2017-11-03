@@ -29,6 +29,7 @@ public:
     inline void addBusinessToSector (business toAdd, string toAddTo) { sectors.addBusinessToSector(toAdd, toAddTo);}
     inline void addConsumer (consumer toAdd) { consumers.addConsumer(toAdd);}
     inline void removeConsumer (string toRemove) { consumers.removeConsumer(toRemove);}
+    void printAll();
     void printGoodPrices ();
     void printSectors ();
     void printBusinesses ();

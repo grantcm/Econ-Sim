@@ -8,15 +8,19 @@
 
 #include "sampleData.h"
 
-bool sampleData::generateGoods() {
+void sampleData::setup() {
+    generateGoods();
+    generateConsumers();
+    generateSectors();
+}
+
+void sampleData::generateGoods() {
     sampleGoods.addGood(Good("Coal", 5, goodType(0)));
     sampleGoods.addGood(Good("Iron", 4, goodType(0)));
     sampleGoods.addGood(Good("Wheat", 3, goodType(0)));
     sampleGoods.addGood(Good("Corn", 2, goodType(0)));
     sampleGoods.addGood(Good("Steel", {"Coal", "Iron"}, goodType(1)));
     sampleGoods.addGood(Good("Water", 2, goodType(0)));
-    
-    return true;
 }
 
 void sampleData::generateConsumers() {

@@ -22,7 +22,9 @@ public:
     inline sampleData() {}
     inline sampleData(goodmarket market) : sampleGoods(market) {}
     
-    bool generateGoods();
+    void setup();
+    void printAll();
+    void generateGoods();
     void generateSectors();
     void generateConsumers();
     inline goodmarket getMarket(){ return sampleGoods;}

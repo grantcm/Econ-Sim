@@ -12,13 +12,8 @@
 
 int main(int argc, const char * argv[]) {
     sampleData data = sampleData();
-    data.generateGoods();
-    data.generateConsumers();
-    data.generateSectors();
+    data.setup();
     marketManager manager = marketManager(data);
-    manager.printGoodPrices();
-    manager.printSectors();
-    manager.printBusinesses();
-    manager.printConsumers();
+    manager.printAll();
     return 0;
 }

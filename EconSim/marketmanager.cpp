@@ -13,6 +13,13 @@
 marketManager::marketManager (goodmarket market, sectormanager sector, consumerManager consumer) : goods (market), sectors(sector), consumers(consumer) {}
 marketManager::marketManager (sampleData data) : goods(data.getMarket()) , sectors(data.getSectors()), consumers(data.getConsumers()) {}
 
+void marketManager::printAll() {
+    printGoodPrices();
+    printConsumers();
+    printSectors();
+    printBusinesses();
+}
+
 void marketManager::printGoodPrices() {
     vector<pair<string, int>> goodPrices = goods.getAllGoodPrices();
     for (pair<string, int> p : goodPrices) {
