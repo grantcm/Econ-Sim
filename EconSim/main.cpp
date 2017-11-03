@@ -9,11 +9,14 @@
 #include <iostream>
 #include "sampleData.h"
 #include "marketmanager.hpp"
+#include "mainwindow.hpp"
 
 int main(int argc, const char * argv[]) {
     sampleData data = sampleData();
     data.setup();
     marketManager manager = marketManager(data);
-    manager.printAll();
+   // manager.printAll();
+    MainWindow window = MainWindow();
+
     return 0;
 }
