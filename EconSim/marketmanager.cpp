@@ -41,3 +41,10 @@ void marketManager::printConsumers() {
     cout << "Consumers: " << endl;
     consumers.printConsumers();
 }
+
+void marketManager::test() {
+    business * b1  = sectors.getSector("Mining")->getBusiness("Iron Miners");
+    business * b2 = sectors.getSector("Manufacturing")->getBusiness("Steel's Steel");
+    business * b3 = sectors.getSector("Agriculture")->getBusiness("Wheat Growers");
+    b2->addRequest(b3, true, 1);
+}

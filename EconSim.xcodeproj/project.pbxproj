@@ -13,6 +13,7 @@
 		933FAB5F1FA898F200B1D38B /* consumermanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB5D1FA898F200B1D38B /* consumermanager.cpp */; };
 		934155BD1FA9DB0D00806922 /* mainwindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 934155BC1FA9DB0D00806922 /* mainwindow.cpp */; };
 		934155CB1FA9E9B000806922 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 934155BF1FA9DE9400806922 /* OpenGL.framework */; };
+		937834AA1FB4292B00CBBE6F /* business.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 937834A91FB4292B00CBBE6F /* business.cpp */; };
 		937EB68A1FA9EC4800CB2A7F /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 937EB6841FA9EACC00CB2A7F /* libglfw.3.2.dylib */; };
 		93FDA80D1FABFF1200DC6770 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FDA80B1FABFDCA00DC6770 /* libGLEW.2.1.0.dylib */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		934155C41FA9E14600806922 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		934155C61FA9E14F00806922 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		934155C81FA9E15A00806922 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		937834A91FB4292B00CBBE6F /* business.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = business.cpp; sourceTree = "<group>"; };
 		937EB6841FA9EACC00CB2A7F /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		937EB6881FA9EBB500CB2A7F /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		93FDA80A1FABF77D00DC6770 /* mainwindow.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mainwindow.hpp; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				933FAB5B1FA88B5700B1D38B /* sectormanager.hpp */,
 				933FAB5D1FA898F200B1D38B /* consumermanager.cpp */,
 				933FAB5E1FA898F200B1D38B /* consumermanager.hpp */,
+				937834A91FB4292B00CBBE6F /* business.cpp */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				933FAB561FA87E7900B1D38B /* marketmanager.cpp in Sources */,
+				937834AA1FB4292B00CBBE6F /* business.cpp in Sources */,
 				933FAB511FA8780600B1D38B /* sampleData.cpp in Sources */,
 				933FAB461FA86E5200B1D38B /* main.cpp in Sources */,
 				933FAB5F1FA898F200B1D38B /* consumermanager.cpp in Sources */,

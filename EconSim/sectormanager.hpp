@@ -7,8 +7,9 @@
 //
 
 #ifndef sectormanager_h
-#include "sector.hpp"
 #define sectormanager_h
+
+#include "sector.hpp"
 
 class sectormanager {
     map<string, sector> sectors;
@@ -19,6 +20,7 @@ public:
     inline void addBusinessToSector (business toAdd, string toAddTo) {sectors[toAddTo].addBusiness(toAdd); }
     inline void printBusinesses () { for (pair<string, sector> p : sectors) {p.second.printBusinesses();}}
     inline void printSectors () { for (pair<string, sector> p : sectors) {cout<<p.first<<endl;}}
+    inline sector * getSector (string name) { return &sectors[name]; }
 };
 
 #endif /* sectormanager_h */

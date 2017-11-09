@@ -15,8 +15,9 @@ int main(int argc, const char * argv[]) {
     sampleData data = sampleData();
     data.setup();
     marketManager manager = marketManager(data);
-   // manager.printAll();
-    MainWindow window = MainWindow();
+    manager.test();
+    //manager.printAll();
+    //MainWindow window = MainWindow();
 
     return 0;
 }

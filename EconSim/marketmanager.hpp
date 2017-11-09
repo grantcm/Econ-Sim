@@ -34,6 +34,7 @@ public:
     void printSectors ();
     void printBusinesses ();
     void printConsumers ();
+    void test ();
 };
 
 #endif /* MarketManager_hpp */
