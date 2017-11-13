@@ -13,14 +13,14 @@
 
 class sectormanager {
     map<string, sector> sectors;
-    
 public:
-    inline sectormanager () {}
+    inline sectormanager() { }
     inline void addSector (sector toAdd) { if (sectors.count(toAdd.getName()) == 0) { sectors[toAdd.getName()] = toAdd; }}
     inline void addBusinessToSector (business toAdd, string toAddTo) {sectors[toAddTo].addBusiness(toAdd); }
     inline void printBusinesses () { for (pair<string, sector> p : sectors) {p.second.printBusinesses();}}
     inline void printSectors () { for (pair<string, sector> p : sectors) {cout<<p.first<<endl;}}
     inline sector * getSector (string name) { return &sectors[name]; }
+    inline void runSectors () { for(auto p: sectors) { p.second.runBusinesses(); }}
 };
 
 #endif /* sectormanager_h */

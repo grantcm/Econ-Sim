@@ -6,12 +6,10 @@
 //  Copyright © 2017 Grant Miller. All rights reserved.
 //
 
-#include <iostream>
-
 #include "marketmanager.hpp"
 
-marketManager::marketManager (goodmarket market, sectormanager sector, consumerManager consumer) : goods (market), sectors(sector), consumers(consumer) {}
-marketManager::marketManager (sampleData data) : goods(data.getMarket()) , sectors(data.getSectors()), consumers(data.getConsumers()) {}
+marketManager::marketManager (goodmarket market, sectormanager sector, consumerManager consumer) : goods (market), manager(sector), consumers(consumer) {}
+marketManager::marketManager (sampleData data) : goods(data.getMarket()) , manager(data.getSectors()), consumers(data.getConsumers()) {}
 
 void marketManager::printAll() {
     printGoodPrices();
@@ -29,12 +27,12 @@ void marketManager::printGoodPrices() {
 
 void marketManager::printSectors() {
     cout << "Sectors:" <<endl;
-    sectors.printSectors();
+    manager.printSectors();
 }
 
 void marketManager::printBusinesses() {
     cout << "Businesses:" << endl;
-    sectors.printBusinesses();
+    manager.printBusinesses();
 }
 
 void marketManager::printConsumers() {
@@ -43,8 +41,9 @@ void marketManager::printConsumers() {
 }
 
 void marketManager::test() {
-    business * b1  = sectors.getSector("Mining")->getBusiness("Iron Miners");
-    business * b2 = sectors.getSector("Manufacturing")->getBusiness("Steel's Steel");
-    business * b3 = sectors.getSector("Agriculture")->getBusiness("Wheat Growers");
+    business * b1  = manager.getSector("Mining")->getBusiness("Iron Miners");
+    business * b2 = manager.getSector("Manufacturing")->getBusiness("Steel's Steel");
+    business * b3 = manager.getSector("Agriculture")->getBusiness("Wheat Growers");
     b2->addRequest(b3, true, 1);
+    manager.runSectors();
 }

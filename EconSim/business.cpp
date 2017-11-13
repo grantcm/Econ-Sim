@@ -53,12 +53,22 @@ bool business::canHandleRequest(deal request ) {
     
     return canHandle;
 }
+void business::addRequest(business * from, bool type, int quantity) {
+    cout<<"Requesting good: "<<product->getName()<<" for: "<<from->getName()<<" from: "<<name<<endl;
+    requestQueue.push(deal {from,type,product,quantity});
+}
+
+void business::addRequest(deal request) {
+    cout<<"Requesting good: "<<request.good->getName()<<" for: "<<request.partner->getName()<<" from: "<<name<<endl;
+    requestQueue.push(request);
+}
+
 
 void business::syncInventory() {
     for ( auto p: existingDeals) {
         if (inventory[p.first] != p.second.quantity) {
             inventory[p.first] = p.second.quantity;
-            cout<<"Updated inventory for "<<this->getName()<<endl;
+            cout<<"Updated inventory for "<<this->getName()<<endl<<"Updated "<<p.first<<" to amt: "<<p.second.quantity<<endl;
         }
     }
 }

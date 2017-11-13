@@ -8,7 +8,6 @@
 
 #ifndef business_hpp
 #define business_hpp
-
 #include <string>
 #include <set>
 #include <queue>
@@ -54,8 +53,8 @@ public:
     inline void addEmployee (consumer * newEmp) { employees.insert(newEmp);}
     inline void removeEmployee (string name) { /*TODO*/ }
     inline int getOperatingRevenue() { return price*quantity - cost*quantity; }
-    inline void addRequest(business * from, bool type, int quantity) { requestQueue.push(deal {from,type,product,quantity}); }
-    inline void addRequest(deal request) { requestQueue.push(request); }
+    void addRequest(business * ,bool , int);
+    void addRequest(deal);
     inline deal getRequest() { return requestQueue.front(); }
     inline void popRequest() { requestQueue.pop(); }
     inline void addDeal(deal toAdd) {existingDeals[toAdd.good->getName()] = toAdd;}

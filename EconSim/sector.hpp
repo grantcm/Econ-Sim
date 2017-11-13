@@ -26,6 +26,7 @@ public:
     inline void addBusiness (business toAdd) { if(businesses.count(toAdd.getName()) == 0) { businesses[toAdd.getName()] = toAdd; }}
     inline void removeBusiness (business ToRemove) { businesses.erase(ToRemove.getName());}
     inline void printBusinesses () { for ( pair<string, business> p: businesses) {p.second.printBusiness();} }
+    void runBusinesses ();
 };
 
 

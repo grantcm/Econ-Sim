@@ -9,15 +9,14 @@
 #ifndef MarketManager_hpp
 #define MarketManager_hpp
 
-#include <stdio.h>
 #include "goodmarket.h"
 #include "sectormanager.hpp"
-#include "sampleData.h"
 #include "consumermanager.hpp"
+#include "sampleData.h"
 
 class marketManager {
     goodmarket goods;
-    sectormanager sectors;
+    sectormanager manager;
     consumerManager consumers;
 public:
     marketManager (goodmarket, sectormanager, consumerManager);
@@ -25,8 +24,8 @@ public:
     inline marketManager () {}
     inline void addGood (Good toAdd) { goods.addGood(toAdd); }
     inline void removeGood (Good toRemove) { goods.removeGood(toRemove); }
-    inline void addSector (sector toAdd) { sectors.addSector(toAdd);}
-    inline void addBusinessToSector (business toAdd, string toAddTo) { sectors.addBusinessToSector(toAdd, toAddTo);}
+    inline void addSector (sector toAdd) { manager.addSector(toAdd);}
+    inline void addBusinessToSector (business toAdd, string toAddTo) { manager.addBusinessToSector(toAdd, toAddTo);}
     inline void addConsumer (consumer toAdd) { consumers.addConsumer(toAdd);}
     inline void removeConsumer (string toRemove) { consumers.removeConsumer(toRemove);}
     void printAll();
