@@ -24,7 +24,7 @@ business::business (string newName, Good * newGood, set<consumer *> _employees) 
  If profit can be increased then increase production, otherwise try to mitigate costs
  */
 void business::run(){
-    if (!requestQueue.empty()) {
+    if (isRunnable()) {
         deal current = getRequest();
         syncInventory();
         if (canHandleRequest(current)) {
@@ -33,6 +33,11 @@ void business::run(){
             popRequest();
         }
     }
+}
+
+//Indicates whether the request queue is empty
+bool business::isRunnable() {
+    return !requestQueue.empty();
 }
 
 //Check if the inventory has enough goods to handle the new request, if not then spawn new requests to increase inventory
@@ -78,4 +83,13 @@ void business::syncInventory() {
 void business::setupProduction() {
     cost = product->getCost();
     price = cost + 3;
+}
+
+void business::removeEmployee(string toRemove){
+    for (consumer * p: employees){
+        if (p->getName()==toRemove) {
+            employees.erase(p);
+            break;
+        }
+    }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930D90B51FBBD42E00EB855F /* sectormanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 930D90B41FBBD42E00EB855F /* sectormanager.cpp */; };
 		933FAB461FA86E5200B1D38B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB451FA86E5200B1D38B /* main.cpp */; };
 		933FAB511FA8780600B1D38B /* sampleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB4F1FA8780600B1D38B /* sampleData.cpp */; };
 		933FAB561FA87E7900B1D38B /* marketmanager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933FAB541FA87E7900B1D38B /* marketmanager.cpp */; };
@@ -32,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		930D90B41FBBD42E00EB855F /* sectormanager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sectormanager.cpp; sourceTree = "<group>"; };
 		933FAB421FA86E5200B1D38B /* EconSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EconSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		933FAB451FA86E5200B1D38B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		933FAB4C1FA86FD100B1D38B /* good.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = good.h; sourceTree = "<group>"; };
@@ -74,6 +76,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930D90B11FBBD3E800EB855F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				933FAB541FA87E7900B1D38B /* marketmanager.cpp */,
+				933FAB551FA87E7900B1D38B /* marketmanager.hpp */,
+				933FAB5B1FA88B5700B1D38B /* sectormanager.hpp */,
+				933FAB5D1FA898F200B1D38B /* consumermanager.cpp */,
+				933FAB5E1FA898F200B1D38B /* consumermanager.hpp */,
+				930D90B41FBBD42E00EB855F /* sectormanager.cpp */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		930D90B21FBBD3FE00EB855F /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				933FAB571FA8834F00B1D38B /* business.hpp */,
+				933FAB591FA8841400B1D38B /* sector.hpp */,
+				937834AC1FB5547A00CBBE6F /* sector.cpp */,
+				937834A91FB4292B00CBBE6F /* business.cpp */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
+		930D90B31FBBD40D00EB855F /* Goods */ = {
+			isa = PBXGroup;
+			children = (
+				933FAB5C1FA893E400B1D38B /* consumer.hpp */,
+				933FAB4C1FA86FD100B1D38B /* good.h */,
+				933FAB521FA878E900B1D38B /* goodmarket.h */,
+			);
+			name = Goods;
+			sourceTree = "<group>";
+		};
 		933FAB391FA86E5200B1D38B = {
 			isa = PBXGroup;
 			children = (
@@ -104,20 +140,11 @@
 		934155BA1FA9C7CB00806922 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				933FAB5C1FA893E400B1D38B /* consumer.hpp */,
-				933FAB571FA8834F00B1D38B /* business.hpp */,
-				933FAB591FA8841400B1D38B /* sector.hpp */,
-				937834AC1FB5547A00CBBE6F /* sector.cpp */,
-				933FAB4C1FA86FD100B1D38B /* good.h */,
+				930D90B21FBBD3FE00EB855F /* Business */,
+				930D90B31FBBD40D00EB855F /* Goods */,
 				933FAB4F1FA8780600B1D38B /* sampleData.cpp */,
-				933FAB521FA878E900B1D38B /* goodmarket.h */,
-				933FAB541FA87E7900B1D38B /* marketmanager.cpp */,
-				933FAB551FA87E7900B1D38B /* marketmanager.hpp */,
+				930D90B11FBBD3E800EB855F /* Managers */,
 				933FAB531FA87A5600B1D38B /* sampleData.h */,
-				933FAB5B1FA88B5700B1D38B /* sectormanager.hpp */,
-				933FAB5D1FA898F200B1D38B /* consumermanager.cpp */,
-				933FAB5E1FA898F200B1D38B /* consumermanager.hpp */,
-				937834A91FB4292B00CBBE6F /* business.cpp */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -208,6 +235,7 @@
 				933FAB511FA8780600B1D38B /* sampleData.cpp in Sources */,
 				933FAB461FA86E5200B1D38B /* main.cpp in Sources */,
 				933FAB5F1FA898F200B1D38B /* consumermanager.cpp in Sources */,
+				930D90B51FBBD42E00EB855F /* sectormanager.cpp in Sources */,
 				934155BD1FA9DB0D00806922 /* mainwindow.cpp in Sources */,
 				937834AD1FB5547A00CBBE6F /* sector.cpp in Sources */,
 			);

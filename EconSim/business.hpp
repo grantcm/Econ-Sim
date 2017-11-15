@@ -17,8 +17,9 @@
 #include "consumer.hpp"
 #include "good.h"
 
+
+
 class business {
-    
     struct deal {
         //Trading partner
         business * partner;
@@ -29,7 +30,6 @@ class business {
         //quantity of good traded
         int quantity;
     };
-    
     string name;
     set<consumer *> employees;
     queue<deal> requestQueue;
@@ -51,7 +51,7 @@ public:
     inline Good getProduct () { return *product;}
     inline void printBusiness () { cout<<name<<": "<<product->getName()<<endl;}
     inline void addEmployee (consumer * newEmp) { employees.insert(newEmp);}
-    inline void removeEmployee (string name) { /*TODO*/ }
+    void removeEmployee (string);
     inline int getOperatingRevenue() { return price*quantity - cost*quantity; }
     void addRequest(business * ,bool , int);
     void addRequest(deal);
@@ -60,6 +60,7 @@ public:
     inline void addDeal(deal toAdd) {existingDeals[toAdd.good->getName()] = toAdd;}
     inline deal * getDeal(string name) { return &existingDeals[name]; }
     void run ();
+    bool isRunnable ();
     void syncInventory ();
     bool canHandleRequest (deal request);
     void setupProduction ();

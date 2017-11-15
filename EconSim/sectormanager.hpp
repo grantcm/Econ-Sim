@@ -11,8 +11,20 @@
 
 #include "sector.hpp"
 
+struct deal {
+    //Trading partner
+    business * partner;
+    //True indicates import, false export
+    bool isComponent;
+    //Good we are trading
+    Good * good;
+    //quantity of good traded
+    int quantity;
+};
+
 class sectormanager {
     map<string, sector> sectors;
+    queue<deal> globalRequestQueue;
 public:
     inline sectormanager() { }
     inline void addSector (sector toAdd) { if (sectors.count(toAdd.getName()) == 0) { sectors[toAdd.getName()] = toAdd; }}
@@ -20,7 +32,12 @@ public:
     inline void printBusinesses () { for (pair<string, sector> p : sectors) {p.second.printBusinesses();}}
     inline void printSectors () { for (pair<string, sector> p : sectors) {cout<<p.first<<endl;}}
     inline sector * getSector (string name) { return &sectors[name]; }
-    inline void runSectors () { for(auto p: sectors) { p.second.runBusinesses(); }}
+    void addRequest(business * ,bool , int);
+    void addRequest(deal);
+    inline deal getRequest() { return globalRequestQueue.front(); }
+    inline void popRequest() { globalRequestQueue.pop(); }
+    void runSectors ();
+    bool pollSectors ();
 };
 
 #endif /* sectormanager_h */

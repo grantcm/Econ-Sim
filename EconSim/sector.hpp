@@ -23,9 +23,9 @@ public:
     inline string getName () { return name;}
     inline map<string, business> getBusinesses () { return businesses;}
     inline business * getBusiness (string name) { return &businesses[name];}
-    inline void addBusiness (business toAdd) { if(businesses.count(toAdd.getName()) == 0) { businesses[toAdd.getName()] = toAdd; }}
-    inline void removeBusiness (business ToRemove) { businesses.erase(ToRemove.getName());}
-    inline void printBusinesses () { for ( pair<string, business> p: businesses) {p.second.printBusiness();} }
+    void addBusiness (business toAdd);
+    void removeBusiness (business ToRemove);
+    void printBusinesses ();
     void runBusinesses ();
 };
 
