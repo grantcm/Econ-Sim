@@ -8,18 +8,14 @@
 
 #ifndef mainwindow_h
 #define mainwindow_h
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 
 class MainWindow {
-    GLFWwindow * mainWindow;
     
 public:
     MainWindow(){
         setupMainWindow();
     }
     void setupMainWindow ();
-    GLFWwindow * getMainWindow();
     
 };
 

@@ -25,10 +25,10 @@ business::business (string newName, Good * newGood, set<consumer *> _employees) 
  */
 void business::run(){
     if (isRunnable()) {
-        deal current = getRequest();
+        request current = getRequest();
         syncInventory();
         if (canHandleRequest(current)) {
-            addDeal(current);
+            addRequest(current);
             syncInventory();
             popRequest();
         }
@@ -41,17 +41,17 @@ bool business::isRunnable() {
 }
 
 //Check if the inventory has enough goods to handle the new request, if not then spawn new requests to increase inventory
-bool business::canHandleRequest(deal request ) {
+bool business::canHandleRequest(request request ) {
     bool canHandle = true;
     for (auto p: inventory) {
         if (request.quantity > p.second - quantity) {
-            //go to existing deals and request more goods from other company
-            deal currentDeal = existingDeals[request.good->getName()];
+            //go to existing requests and request more goods from other company
+            struct request currentRequest = existingRequests[request.good->getName()];
             //Create new request for the good we need at the quantity we lack
-            deal newRequest = {currentDeal.partner, true, currentDeal.good, p.second - quantity};
-            cout<<"Creating new request from "<<currentDeal.partner<<" for "<<currentDeal.good<<" amount: "
+            struct request newRequest = {currentRequest.partner, this, true, currentRequest.good, p.second - quantity};
+            cout<<"Creating new request from "<<currentRequest.partner<<" for "<<currentRequest.good<<" amount: "
             <<p.second-quantity<<endl;
-            currentDeal.partner->addRequest(newRequest);
+            currentRequest.partner->addRequest(newRequest);
             canHandle = false;
         }
     }
@@ -60,17 +60,19 @@ bool business::canHandleRequest(deal request ) {
 }
 void business::addRequest(business * from, bool type, int quantity) {
     cout<<"Requesting good: "<<product->getName()<<" for: "<<from->getName()<<" from: "<<name<<endl;
-    requestQueue.push(deal {from,type,product,quantity});
+    requestQueue.push(request {from, this, type, product, quantity});
+    madeRequest = true;
 }
 
-void business::addRequest(deal request) {
+void business::addRequest(request request) {
     cout<<"Requesting good: "<<request.good->getName()<<" for: "<<request.partner->getName()<<" from: "<<name<<endl;
     requestQueue.push(request);
+    madeRequest = true;
 }
 
 
 void business::syncInventory() {
-    for ( auto p: existingDeals) {
+    for ( auto p: existingRequests) {
         if (inventory[p.first] != p.second.quantity) {
             inventory[p.first] = p.second.quantity;
             cout<<"Updated inventory for "<<this->getName()<<endl<<"Updated "<<p.first<<" to amt: "<<p.second.quantity<<endl;
@@ -92,4 +94,8 @@ void business::removeEmployee(string toRemove){
             break;
         }
     }
+}
+
+void business::popRequest() {
+    requestQueue.pop();
 }

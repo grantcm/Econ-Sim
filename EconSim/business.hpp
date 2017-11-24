@@ -20,9 +20,11 @@
 
 
 class business {
-    struct deal {
+    struct request {
         //Trading partner
         business * partner;
+        //Owner of request
+        business * owner;
         //True indicates import, false export
         bool isComponent;
         //Good we are trading
@@ -30,13 +32,18 @@ class business {
         //quantity of good traded
         int quantity;
     };
+    
     string name;
     set<consumer *> employees;
-    queue<deal> requestQueue;
-    map<string, deal> existingDeals;
+    //each company has a unique request queue
+    queue<request> requestQueue;
+    //map of company names to requests
+    map<string, request> existingRequests;
+    //inventory of components and output
     map<string, int> inventory;
     Good * product;
-    
+    //Indicates whether a request has been made to another business
+    bool madeRequest;
     //cost and price are per unit
     int cost, price;
     
@@ -54,15 +61,14 @@ public:
     void removeEmployee (string);
     inline int getOperatingRevenue() { return price*quantity - cost*quantity; }
     void addRequest(business * ,bool , int);
-    void addRequest(deal);
-    inline deal getRequest() { return requestQueue.front(); }
-    inline void popRequest() { requestQueue.pop(); }
-    inline void addDeal(deal toAdd) {existingDeals[toAdd.good->getName()] = toAdd;}
-    inline deal * getDeal(string name) { return &existingDeals[name]; }
+    void addRequest(request);
+    inline request getRequest() { return requestQueue.front(); }
+    void popRequest();
+    inline request * getRequest(string name) { return &existingRequests[name]; }
     void run ();
     bool isRunnable ();
     void syncInventory ();
-    bool canHandleRequest (deal request);
+    bool canHandleRequest (request);
     void setupProduction ();
 };
 
