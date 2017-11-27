@@ -19,45 +19,11 @@ class goodmarket {
     map<string, Good> goodMap;
     set<string> goodNames;
 public:
-    inline int getCost (Good good) {
-        if (goodExists(good)) {
-            if (good.getType() == goodType(0)) {
-                return good.getCost();
-            } else {
-                int cost = 0;
-                for (string g : good.getComponents()) {
-                    cost += goodMap[g].getCost();
-                }
-                return cost;
-            }
-        }
-        return 0;
-    }
-    
-    inline int getCost (string good) {
-        return getCost(goodMap[good]);
-    }
-    
-    inline void addGood (Good toAdd) {
-        if (!goodExists(toAdd)) {
-            goodMap[toAdd.getName()]=toAdd;
-            goodNames.insert(toAdd.getName());
-        }
-    }
-    
-    inline void removeGood (Good toRemove) {
-        goodMap.erase(toRemove.getName());
-        goodNames.erase(toRemove.getName());
-    }
-    
-    inline vector<pair<string, int>> getAllGoodPrices () {
-        vector<pair<string, int>> prices;
-        for (string name : goodNames) {
-            prices.push_back(pair<string, int> (name, getCost(name)));
-        }
-        return prices;
-    }
-    
+    int getCost (Good);
+    inline int getCost (string good) { return getCost(goodMap[good]); }
+    void addGood (Good);
+    void removeGood (Good);
+    vector<pair<string, int>> getAllGoodPrices ();
     inline bool goodExists (Good exists) { return goodMap.count(exists.getName()) != 0;}
     inline bool goodExists (string exists) { return goodNames.count(exists) != 0;}
     inline Good* getPointerToGood (string name) { return &goodMap[name]; }

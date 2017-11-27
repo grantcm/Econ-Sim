@@ -17,6 +17,7 @@
 		937834AA1FB4292B00CBBE6F /* business.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 937834A91FB4292B00CBBE6F /* business.cpp */; };
 		937834AD1FB5547A00CBBE6F /* sector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 937834AC1FB5547A00CBBE6F /* sector.cpp */; };
 		937EB68A1FA9EC4800CB2A7F /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 937EB6841FA9EACC00CB2A7F /* libglfw.3.2.dylib */; };
+		939D45A51FCC524300207144 /* GoodMarket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 939D45A41FCC524300207144 /* GoodMarket.cpp */; };
 		93FDA80D1FABFF1200DC6770 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 93FDA80B1FABFDCA00DC6770 /* libGLEW.2.1.0.dylib */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		937834AC1FB5547A00CBBE6F /* sector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sector.cpp; sourceTree = "<group>"; };
 		937EB6841FA9EACC00CB2A7F /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		937EB6881FA9EBB500CB2A7F /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
+		939D45A41FCC524300207144 /* GoodMarket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GoodMarket.cpp; sourceTree = "<group>"; };
 		93FDA80A1FABF77D00DC6770 /* mainwindow.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mainwindow.hpp; sourceTree = "<group>"; };
 		93FDA80B1FABFDCA00DC6770 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,6 +108,7 @@
 				933FAB5C1FA893E400B1D38B /* consumer.hpp */,
 				933FAB4C1FA86FD100B1D38B /* good.h */,
 				933FAB521FA878E900B1D38B /* goodmarket.h */,
+				939D45A41FCC524300207144 /* GoodMarket.cpp */,
 			);
 			name = Goods;
 			sourceTree = "<group>";
@@ -142,9 +145,8 @@
 			children = (
 				930D90B21FBBD3FE00EB855F /* Business */,
 				930D90B31FBBD40D00EB855F /* Goods */,
-				933FAB4F1FA8780600B1D38B /* sampleData.cpp */,
+				939D45A61FCC545000207144 /* Tests */,
 				930D90B11FBBD3E800EB855F /* Managers */,
-				933FAB531FA87A5600B1D38B /* sampleData.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -171,6 +173,15 @@
 				934155BF1FA9DE9400806922 /* OpenGL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		939D45A61FCC545000207144 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				933FAB531FA87A5600B1D38B /* sampleData.h */,
+				933FAB4F1FA8780600B1D38B /* sampleData.cpp */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +249,7 @@
 				930D90B51FBBD42E00EB855F /* sectormanager.cpp in Sources */,
 				934155BD1FA9DB0D00806922 /* mainwindow.cpp in Sources */,
 				937834AD1FB5547A00CBBE6F /* sector.cpp in Sources */,
+				939D45A51FCC524300207144 /* GoodMarket.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

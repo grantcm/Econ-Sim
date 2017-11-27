@@ -15,11 +15,11 @@
 #include <map>
 
 #include "consumer.hpp"
-#include "good.h"
-
+#include "goodmarket.h"
 
 
 class business {
+
     struct request {
         //Trading partner
         business * partner;
@@ -27,10 +27,20 @@ class business {
         business * owner;
         //True indicates import, false export
         bool isComponent;
+        //Indicates whether a request has been handled yet
+        bool handled;
         //Good we are trading
         Good * good;
         //quantity of good traded
         int quantity;
+    };
+    
+    struct response {
+        //Pointer to the request we're working with
+        request * associatedRequest;
+        //message for resposne
+        string message;
+        
     };
     
     string name;
@@ -42,14 +52,10 @@ class business {
     //inventory of components and output
     map<string, int> inventory;
     Good * product;
-    //Indicates whether a request has been made to another business
-    bool madeRequest;
     //cost and price are per unit
     int cost, price;
-    
+    // Quantity produced
     int quantity;
-    
-
     
 public:
     inline business () {}
@@ -65,11 +71,11 @@ public:
     inline request getRequest() { return requestQueue.front(); }
     void popRequest();
     inline request * getRequest(string name) { return &existingRequests[name]; }
-    void run ();
+    bool run ();
     bool isRunnable ();
-    void syncInventory ();
     bool canHandleRequest (request);
     void setupProduction ();
+    void updateExistingRequests(request);
 };
 
 
